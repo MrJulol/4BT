@@ -42,7 +42,7 @@ class Composite: Component {
    func display(indent: String) {
       print("\(indent)\(name)")
       for component: Component in components {
-         component.display(indent: indent + "    ")
+         component.display(indent: indent + "\t")
       }
    }
 }

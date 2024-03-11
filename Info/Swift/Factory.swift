@@ -19,33 +19,34 @@ protocol Wheel {
 protocol CarFactory {
    func createMotor() -> Motor
    func createWheels() -> Wheel
+   func getType() -> Character
 }
 
-class MotorA: Motor {
+struct MotorA: Motor {
    func description() {
       print("Motor of Car A")
    }
 }
 
-class MotorB: Motor {
+struct MotorB: Motor {
    func description() {
       print("Motor of Car B")
    }
 }
 
-class WheelA: Wheel {
+struct WheelA: Wheel {
    func description() {
       print("Wheel of Car A")
    }
 }
 
-class WheelB: Wheel {
+struct WheelB: Wheel {
    func description() {
       print("Wheel of Car B")
    }
 }
 
-class CarFactoryA: CarFactory {
+struct CarFactoryA: CarFactory {
    func createMotor() -> Motor {
       return MotorA()
    }
@@ -53,9 +54,12 @@ class CarFactoryA: CarFactory {
    func createWheels() -> Wheel {
       return WheelA()
    }
+   func getType() -> Character {
+      return "A"
+   }
 }
 
-class CarFactoryB: CarFactory {
+struct CarFactoryB: CarFactory {
    func createMotor() -> Motor {
       return MotorB()
    }
@@ -63,21 +67,33 @@ class CarFactoryB: CarFactory {
    func createWheels() -> Wheel {
       return WheelB()
    }
+   func getType() -> Character {
+      return "B"
+   }
+}
+struct Car{
+   var wheels:Wheel
+   var motor:Motor
+   var type:Character
+   init(wheels:Wheel, motor:Motor, type:Character){
+      self.motor = motor
+      self.wheels = wheels
+      self.type = type
+   }
+   func display(){
+      print("Im Car \(self.type)")
+      self.wheels.description()
+      self.motor.description()
+   }
 }
 
 func main() {
-   let type: String = "A"
-   var factory: CarFactory
-   if type == "A" {
-      factory = CarFactoryA()
-   } else {
-      factory = CarFactoryB()
-   }
-   let motor: Motor = factory.createMotor()
-   let wheels: Wheel = factory.createWheels()
-
-   print("Cartype: " + type)
-   motor.description()
-   wheels.description()
+   var factory: CarFactory = CarFactoryA()
+   let car:Car = Car(wheels:factory.createWheels(),motor:factory.createMotor(), type: factory.getType())
+   car.display()
+   print("\n__________________________________\n")
+   factory = CarFactoryB();
+   let car2:Car = Car(wheels:factory.createWheels(),motor:factory.createMotor(), type: factory.getType())
+   car2.display()
 }
 

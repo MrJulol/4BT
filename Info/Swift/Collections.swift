@@ -48,8 +48,8 @@ func inEither(list1: [Int], list2: [Int]) -> [Int] {
 
 func mostFrequent<T: Hashable>(array: [T]) -> (value: T, count: Int)? {
    let counts: [T: Int] = array.reduce(into: [:]) { $0[$1, default: 0] += 1 }
-   if let (value:T, cou:Int) = counts.max(by: { $0.1 < $1.1 }) {
-      return (value, count)
+   if let maxElement:Dictionary<T, Int>.Element = counts.max(by: { $0.1 < $1.1 }) {
+      return (maxElement.key, maxElement.value)
    }
    return nil
 }

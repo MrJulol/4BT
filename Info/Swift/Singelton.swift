@@ -14,7 +14,7 @@ func main() {
    let logger: Logger = Logger.getInstance()
    logger.setLogDateTime(logDateTime: true)
    logger.logToConsole(message: "Console Logging")
-   logger.logToFile(message: "File Logging", path: "/Users/riven/MyProjects/swifting/logfile.txt")
+   logger.logToFile(message: "File Logging", path: "/Users/riven/Programming Stuff/School/4BT/Info/Swift/logfile-Singelton.txt")
 }
 
 extension Date {
