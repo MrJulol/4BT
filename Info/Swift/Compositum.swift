@@ -1,3 +1,9 @@
+//
+//  Compositum.swift
+//  Swifting
+//
+//  Created by Julian Thaler on 05/03/24.
+//
 
 protocol Component {
    func add(component: Component)

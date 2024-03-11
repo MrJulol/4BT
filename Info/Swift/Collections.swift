@@ -1,3 +1,10 @@
+//
+//  Collections.swift
+//  Swifting
+//
+//  Created by Julian Thaler on 05/03/24.
+//
+
 import Foundation
 main()
 func removeSmallInts(list: [Int], lim: Int) -> [Int] {

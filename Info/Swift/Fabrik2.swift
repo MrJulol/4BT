@@ -1,3 +1,10 @@
+//
+//  Fabrik2.swift
+//  Swifting
+//
+//  Created by Julian Thaler on 05/03/24.
+//
+
 import Foundation
 main()
 func main() {

@@ -1,5 +1,5 @@
 //
-//  Singelton.swift
+//  Factory.swift
 //  Swifting
 //
 //  Created by Julian Thaler on 05/03/24.
