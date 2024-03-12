@@ -3,10 +3,10 @@ main()
 func main() {
    print(LogLevel.DEBUG.rawValue)
 
-   let log:Logger = Logger.getInstance()
-   let testLog:Logger = Logger.getInstance()
+   let log: Logger = Logger.getInstance()
+   let testLog: Logger = Logger.getInstance()
 
-   print("Are both Loggers the same reference? : \(testLog===log)\n")
+   print("Are both Loggers the same reference? : \(testLog === log)\n")
 
    log.setLogLevel(level: LogLevel.DEBUG)
    log.log(level: LogLevel.TRACE, message: "trace level log message")
@@ -28,7 +28,7 @@ extension Date {
 
 class Logger {
    private static var instance: Logger? = Logger()
-   private var logs:[(LogLevel, String, String)] = []
+   private var logs: [(LogLevel, String, String)] = []
    private var level: Int = 1
 
    public static func getInstance() -> Logger {
@@ -38,8 +38,8 @@ class Logger {
       return Logger.instance!
    }
 
-   func log(level:LogLevel, message: String) -> Void {
-      let path:String = "/Users/riven/Programming Stuff/School/4BT/Info/Swift/logfile-Singelton2.txt"
+   func log(level: LogLevel, message: String) {
+      let path: String = "/Users/riven/Programming Stuff/School/4BT/Info/Swift/logfile-Singelton2.txt"
       logs.append((level, message, Date.getCurrentDate()))
       if level.rawValue >= self.level {
          let errorLog: String = "\(Date.getCurrentDate()) : \(level) : \(message)\n"
@@ -49,7 +49,7 @@ class Logger {
    }
 
    public func logToFile(message: String, path: String) {
-      let error:String = "\(message)\n"
+      let error: String = "\(message)\n"
       let fileURL: URL = URL(fileURLWithPath: path)
 
       if FileManager.default.fileExists(atPath: path) {
@@ -74,17 +74,17 @@ class Logger {
       }
    }
 
-   func setLogLevel(level: LogLevel){
+   func setLogLevel(level: LogLevel) {
       self.level = level.rawValue
    }
 
-   func displayLogs() -> Void {
+   func displayLogs() {
       print("Displaying all logged Messages: ")
-      for log:(LogLevel, String, String) in self.logs {
+      for log: (LogLevel, String, String) in logs {
          print("Time: \(log.2)\tLog Severity: \(log.0) \tMessage: \(log.1)")
       }
    }
-   
+
    func test() {
       print("WORKING")
    }
