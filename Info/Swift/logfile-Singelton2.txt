@@ -1,0 +1,8 @@
+12/03/2024 15:46:42 : DEBUG : debug level log message
+
+12/03/2024 15:46:42 : INFO : info level log message
+
+12/03/2024 15:46:42 : WARN : warn level log message
+
+12/03/2024 15:46:42 : ERROR : error level log message
+
