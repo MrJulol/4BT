@@ -40,8 +40,8 @@ struct SalesDepartment: Department {
 }
 
 class HeadDepartment : Component {
-   private var number: Int
-   private var name: String
+   private let number: Int
+   private let name: String
    private var components: [Component] = []
 
    init(number: Int, name: String){
@@ -60,12 +60,12 @@ class HeadDepartment : Component {
 }
 func main(){
 
-let sales: Department = SalesDepartment(number: 1, name: "Sales Department")
-let financial: Department = FinancialDepartment(number: 2, name: "Financial Department")
-let head: HeadDepartment = HeadDepartment(number: 3, name: "Head Department")
+   let sales: Department = SalesDepartment(number: 1, name: "Sales Department")
+   let financial: Department = FinancialDepartment(number: 2, name: "Financial Department")
+   let head: HeadDepartment = HeadDepartment(number: 3, name: "Head Department")
 
-head.add(component: sales)
-head.add(component: financial)
-head.display(indent: "")
+   head.add(component: sales)
+   head.add(component: financial)
+   head.display(indent: "")
 
 }

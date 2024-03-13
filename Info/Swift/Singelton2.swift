@@ -84,12 +84,8 @@ class Logger {
          print("Time: \(log.2)\tLog Severity: \(log.0) \tMessage: \(log.1)")
       }
    }
-
-   func test() {
-      print("WORKING")
-   }
 }
 
 enum LogLevel: Int {
-   case TRACE = 1, DEBUG, INFO, WARN, ERROR
+   case TRACE = 1, DEBUG = 2, INFO = 3, WARN = 4, ERROR = 5
 }
