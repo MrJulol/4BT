@@ -38,7 +38,6 @@ struct SalesDepartment: Department {
       print("\(indent)\(self.number): \(self.name)")
    }
 }
-
 class HeadDepartment : Component {
    private let number: Int
    private let name: String
