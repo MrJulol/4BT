@@ -45,8 +45,8 @@ func putBusiness(items: CabinLayout, pay: Bool) {
    items.add(item: layout)
 }
 
-enum Packet: Int {
-   case Entertainment = 1, Nightcare, Business
+enum Packet {
+   case Entertainment, Nightcare, Business
 }
 
 protocol Item {

@@ -1,5 +1,5 @@
 /*
- Factory (Generator)
+ Factory (Generator) / Controller
  */
 import Foundation
 
@@ -21,7 +21,7 @@ func main() {
          books.append(book)
       }
    }
-   let type: ListType = ListType.JSON
+   let type: ListType = ListType.HTML
    let client: Client = Client()
    client.getBookListRepresentation(books: books, type: type)
 }
@@ -46,7 +46,7 @@ struct Client {
          print(pres.getRepresentation())
       } else if type == ListType.JSON {
          let gen: JSONGenerator = JSONGenerator()
-         let presany: BookListRepresentation = gen.gererateBookListRepresentation(books: books)
+         let pres: any BookListRepresentation = gen.gererateBookListRepresentation(books: books)
          print(pres.getRepresentation())
       }
    }

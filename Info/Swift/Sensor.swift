@@ -1,18 +1,16 @@
 import Foundation
 main()
 func main() {
-   let station = WeatherStation()
-   let sensor1 = Sensor(id: 1, ort: "Ort A", value: 20.0)
-   let sensor2 = Sensor(id: 2, ort: "Ort B", value: 25.0)
+   let station: WeatherStation = WeatherStation()
+   let sensor1: Sensor = Sensor(id: 1, ort: "Ort A", value: 20.0)
+   let sensor2: Sensor = Sensor(id: 2, ort: "Ort B", value: 25.0)
 
    station.addSensor(sensor: sensor1)
    station.addSensor(sensor: sensor2)
 
-   // PULL-Variante
    print("PULL-Variante:")
    station.checkSensorsPull()
 
-   // PUSH-Variante
    print("\nPUSH-Variante:")
    station.checkSensorsPush()
 }
@@ -48,14 +46,14 @@ class WeatherStation {
    }
 
    func checkSensorsPull() {
-      for sensor in sensors {
+      for sensor: any SensorProtocol in sensors {
          sensor.changeValue()
          print("Sensor \(sensor.id) in \(sensor.ort) - Wert: \(sensor.value)")
       }
    }
 
    func checkSensorsPush() {
-      for sensor in sensors {
+      for sensor: any SensorProtocol in sensors {
          notify(sensor: sensor)
       }
    }
