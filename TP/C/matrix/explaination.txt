@@ -1,0 +1,16 @@
+Guten Abend,
+
+Der folgende Code erledigt das auslesen mit 2 threads und das multiplizieren mit einem. 
+Ich wollte mit semaphoren die synchonisationfür mehrere threads machen, nur bekomme ich meine Linux VM nicht mehr
+zum laufen. Da Mac-OS Semaphore.h als deprecated erklärt, konnte ich es nicht viel anders machen.
+Und um jetzt das Programm mit Mutex (heute in TP gelernt) zu schreiben fehlt mir die Zeit.
+
+Namen der Input-Files in Zeile 20 & 21 eingeben !
+
+Auf meinem Rechner hatte das Programm eine Durchschnittliche Ausführzeit von 0.01 sec System + 0.4 sec User (output / printing) 
+Die Compilezeit war Durchschnittliche 0.03 s System + 0.07 User (output / printing)
+
+Mit: #pragma GCC optimize("Ofast,inline") Optimierung von Funktionsaufrufe
+
+Auf meinem Rechner hatte das Programm eine Durchschnittliche Ausführzeit von 0.009 sec System + 0.4 sec User (output / printing) 
+Die Compilezeit war Durchschnittliche 0.03 s System + 0.07 User (output / printing)
