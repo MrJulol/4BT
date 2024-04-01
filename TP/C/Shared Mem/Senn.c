@@ -50,7 +50,7 @@ int main()
         msgctl(msgid, IPC_RMID, NULL);
         return EXIT_SUCCESS;
         // KP
-    }
+    } 
     else
     {
         printf("test3\n");
