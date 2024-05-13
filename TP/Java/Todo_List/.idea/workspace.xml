@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c9d82b35-7345-4c33-9cff-fb00ed7c81e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/Blockchain.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/Blockchain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/BlockchainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/BlockchainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/Encrypt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/Main3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/TransactionData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Blockchain/src/TransactionView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Memory-Game/src/main/java/org/example/memorygame/MemoryViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Info/Java/Memory-Game/src/main/resources/org/example/memorygame/memory-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChatApp/src/main/java/org/example/chatapp/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Info/Swift/Blockchain" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX-TP/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX-TP/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX-TP/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX-TP/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX-TP/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX-TP/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX-TP/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Management-Software/src/main/java/org/example/managementsoftware/MembershipViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Management-Software/src/main/java/org/example/managementsoftware/MembershipViewController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MrJulol&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:MrJulol/Programming-Stuff-School-4BT.git&quot;,
+    &quot;accountId&quot;: &quot;63186559-570e-4f03-bb00-3e55ee6140ec&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2fogUNI2Z7IB15qovcFFM8WzvLZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.todo_list" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.todo_list.HelloApplication" />
+      <module name="Todo_List" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.todo_list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-11.0.2\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.graphics,javafx.media" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9d82b35-7345-4c33-9cff-fb00ed7c81e1" name="Changes" comment="" />
+      <created>1714472859559</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714472859559</updated>
+      <workItem from="1714472860562" duration="2857000" />
+      <workItem from="1714643363138" duration="4627000" />
+      <workItem from="1714660072819" duration="81000" />
+      <workItem from="1714661166865" duration="4000" />
+      <workItem from="1714974993393" duration="5781000" />
+      <workItem from="1715004590625" duration="3455000" />
+      <workItem from="1715077573698" duration="486000" />
+      <workItem from="1715268611889" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
