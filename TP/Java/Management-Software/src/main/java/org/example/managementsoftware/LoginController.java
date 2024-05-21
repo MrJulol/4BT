@@ -15,6 +15,11 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+    /**
+     *
+     * @param actionEvent
+     */
+
     public void onLoginButtonClick(ActionEvent actionEvent) {
 
         if (Validation.isInvalidInput(usernameField.getText())) {
@@ -45,7 +50,7 @@ public class LoginController {
 
 
     /**
-     * Yet to be implemented!!
+     * Checking System for Clients
      *
      * @param username
      * @param pass

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.managementsoftware.AdminViewController">
@@ -11,12 +14,28 @@
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <PieChart prefHeight="355.0" prefWidth="598.0" fx:id="chart"/>
+                  <SplitPane dividerPositions="0.337248322147651" prefHeight="355.0" prefWidth="598.0">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ListView layoutX="-1.0" layoutY="31.0" prefHeight="278.0" prefWidth="200.0" fx:id="clientList" />
+                              <Label alignment="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" fx:id="LoggedOnUser"/>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="353.0" fitWidth="392.0">
+                                 <Image url="@Logo.jpeg"/>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
                </children>
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" text="Register new User" onAction="#onRegisterButtonPressed"/>
+                  <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" text="Register new User"  onAction="#onRegisterButtonPressed"/>
                   <Button layoutX="142.0" layoutY="6.0" mnemonicParsing="false" text="Membership" onAction="#onMembershipButtonPressed"/>
                   <Button layoutX="530.0" layoutY="6.0" mnemonicParsing="false" text="Logout" onAction="#onReturnButtonPressed"/>
                </children>
