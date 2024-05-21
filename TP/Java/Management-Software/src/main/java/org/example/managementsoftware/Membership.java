@@ -14,4 +14,12 @@ public class Membership {
     public String name() {
         return type.name();
     }
+
+    public LocalDate getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
+    }
 }

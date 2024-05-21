@@ -1,6 +1,7 @@
 package org.example.managementsoftware;
 
 import java.time.LocalDate;
+import java.util.stream.Collectors;
 
 public class Validation {
     /**
@@ -15,23 +16,20 @@ public class Validation {
 
     public static boolean validateName(String name) {
         if(isInvalidInput(name)) return false;
+        return !Database.getDatabase().getAccountsAsList().stream().map(Account::getName).collect(Collectors.toSet()).contains(name);
         //Check if name is already Given Away
-        return true;
     }
 
     public static boolean validateAddress(String address) {
-        if(isInvalidInput(address)) return false;
-        return true;
+        return !isInvalidInput(address);
     }
 
     public static boolean validatePhone(String phone) {
-        if(isInvalidInput(phone)) return false;
-        return true;
+        return phone.matches("\\d+$");
     }
 
     public static boolean validateBirthDate(LocalDate birthDate) {
-        if(birthDate.isAfter(LocalDate.now())) return false;
-        return true;
+        return !birthDate.isAfter(LocalDate.now());
     }
 
     public static boolean validatePassword(String PassOnInit, String PassOnConfirm) {

@@ -10,7 +10,8 @@ public class Client {
         try (Socket socket = new Socket("localhost", PORT)) {
             System.out.println("Connected to server!");
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             System.out.print("Enter your nickname: ");
             String nickname = new Scanner(System.in).nextLine();

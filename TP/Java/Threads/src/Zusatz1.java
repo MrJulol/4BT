@@ -21,7 +21,7 @@ public class Zusatz1 {
     public static void main(String[] args) {
         ThreadSafeLogger logger = new ThreadSafeLogger();
         IntStream.range(0,5).forEach(i -> {new Thread(()->{
-            logger.log("Thread " + i);
+            logger.log("Thread x" + i);
         }).start();});
     }
 }

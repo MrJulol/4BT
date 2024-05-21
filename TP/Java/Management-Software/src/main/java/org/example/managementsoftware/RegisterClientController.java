@@ -8,6 +8,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 
 import java.time.LocalDate;
+import java.util.stream.Collectors;
 
 public class RegisterClientController {
     @FXML
@@ -63,7 +64,11 @@ public class RegisterClientController {
             System.out.println("Delete User");
             Database.getDatabase().removeAccount(account);
             Data.listView.getItems().remove(box);
+            Data.clientList.getItems().setAll(Database.getDatabase().getAccountsAsList().stream().map(a -> new HBox(new Label(a.getName()))).collect(Collectors.toSet()));
         });
+
+        Label finalDate = new Label();
+        finalDate.setText(account.getMembership().getExpirationDate().toString());
 
         SplitMenuButton membership = new SplitMenuButton();
         membership.setText(account.getMembership().name());
@@ -71,25 +76,33 @@ public class RegisterClientController {
         yearly.setOnAction((event) -> {
             account.changeMembership(MembershipType.YEARLY);
             membership.setText(account.getMembership().name());
+            finalDate.setText(account.getMembership().getExpirationDate().toString());
         });
 
         MenuItem monthly = new MenuItem("Monthly");
         monthly.setOnAction((event -> {
             account.changeMembership(MembershipType.MONTHLY);
             membership.setText(account.getMembership().name());
+            finalDate.setText(account.getMembership().getExpirationDate().toString());
         }));
 
         MenuItem quarterly = new MenuItem("Quarterly");
         quarterly.setOnAction((event -> {
             account.changeMembership(MembershipType.QUARTERLY);
             membership.setText(account.getMembership().name());
+            finalDate.setText(account.getMembership().getExpirationDate().toString());
         }));
+
+
+
         membership.getItems().addAll(yearly, monthly, quarterly);
+        membership.setMinWidth(120);
         Region region = new Region();
         HBox.setHgrow(region, Priority.ALWAYS);
 
-        box.getChildren().addAll(new Label(account.getName()), region, deleteUser, membership);
+        box.getChildren().addAll(new Label(account.getName()), region,finalDate, deleteUser, membership);
         Data.listView.getItems().add(box);
+        Data.clientList.getItems().add(new HBox(new Label(account.getName())));
         System.out.println(Database.getDatabase().getAccountsAsList());
     }
 }

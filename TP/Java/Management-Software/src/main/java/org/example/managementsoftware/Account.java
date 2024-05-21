@@ -2,7 +2,9 @@ package org.example.managementsoftware;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,7 +18,7 @@ public class Account {
     private final String pass;
     private Membership membership;
     private int checkinStat = 0;
-    private final List<LocalDate> checkinStatDates;
+    private final List<String> checkinStatDates;
 
     public Account(String name, String address, String telNumber, LocalDate birtDate, String pass, MembershipType membershipType) {
         this.name = name;
@@ -35,6 +37,26 @@ public class Account {
         }
         this.checkinStatDates = new ArrayList<>();
     }
+    public Account(String name, String address, String telNumber, LocalDate birtDate, String pass, MembershipType membershipType, String expirationDate) {
+        this.name = name;
+        this.address = address;
+        this.telNumber = telNumber;
+        this.birtDate = birtDate;
+        this.pass = pass;
+        switch (membershipType) {
+            case MONTHLY ->
+                    this.membership = new Membership(ZonedDateTime.now().plusMonths(1).toLocalDate(), MembershipType.MONTHLY);
+            case YEARLY ->
+                    this.membership = new Membership(ZonedDateTime.now().plusYears(1).toLocalDate(), MembershipType.YEARLY);
+            case QUARTERLY ->
+                    this.membership = new Membership(ZonedDateTime.now().plusMonths(3).toLocalDate(), MembershipType.QUARTERLY);
+            default -> throw new IllegalStateException("Unexpected value: " + membershipType);
+        }
+        this.checkinStatDates = new ArrayList<>();
+        this.membership.setExpirationDate(LocalDate.parse(expirationDate));
+    }
+
+
 
     public void changeMembership(MembershipType membershipType) {
         switch (membershipType) {
@@ -99,7 +121,11 @@ public class Account {
 
     public void setCheckinStat(int checkinStat) {
         this.checkinStat = checkinStat;
-        this.checkinStatDates.add(LocalDate.now());
+        this.checkinStatDates.add(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));
+    }
+
+    public List<String> getCheckinStatDates() {
+        return checkinStatDates;
     }
 
     @Override
@@ -119,11 +145,7 @@ public class Account {
     public String toString() {
         return "Account{" +
                 "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", telNumber='" + telNumber + '\'' +
-                ", birtDate=" + birtDate +
                 ", pass='" + pass + '\'' +
-                ", membership=" + membership +
                 ", checkinStat=" + checkinStat +
                 '}';
     }

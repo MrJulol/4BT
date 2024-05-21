@@ -7,6 +7,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.time.LocalDate;
+
 public class LoginController {
     @FXML
     private TextField usernameField;
@@ -52,6 +54,10 @@ public class LoginController {
         Account tryLogin = Database.getDatabase().findAccountByUsername(username);
         if (tryLogin == null) {
             showAlert("Invalid username or password");
+            return false;
+        }
+        if(tryLogin.getMembership().getExpirationDate().isBefore(LocalDate.now())){
+            showAlert("Expired Membership");
             return false;
         }
         System.out.println(tryLogin.getName());

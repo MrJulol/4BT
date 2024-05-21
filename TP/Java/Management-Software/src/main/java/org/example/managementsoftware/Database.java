@@ -17,16 +17,18 @@ public class Database {
     /**
      * Create table SQL Statement
      */
-    private final String CREATE_TABLE_SQL = "CREATE TABLE IF NOT EXISTS accounts (\n"
-            + "    id INTEGER PRIMARY KEY,\n"
-            + "    name TEXT,\n"
-            + "    address TEXT,\n"
-            + "    telNumber TEXT,\n"
-            + "    birthDate DATE,\n"
-            + "    pass TEXT,\n"
-            + "    checkinStat INTEGER,\n"
-            + "    membershipType TEXT\n"
-            + ");";
+    private final String CREATE_TABLE_SQL = """
+            CREATE TABLE IF NOT EXISTS accounts (
+                id INTEGER PRIMARY KEY,
+                name TEXT,
+                address TEXT,
+                telNumber TEXT,
+                birthDate DATE,
+                pass TEXT,
+                checkinStat INTEGER,
+                membershipType TEXT,
+                expDate TEXT
+            );""";
 
     /**
      * Connects to Database at this.URL
@@ -51,7 +53,7 @@ public class Database {
      * @throws SQLException
      */
     private void insertAccount(Account account) throws SQLException {
-        String sql = "INSERT INTO accounts (name, address, telNumber, birthDate, pass, checkinStat, membershipType) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO accounts (name, address, telNumber, birthDate, pass, checkinStat, membershipType, expDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, account.getName());
         preparedStatement.setString(2, account.getAddress());
@@ -60,6 +62,7 @@ public class Database {
         preparedStatement.setString(5, account.getPass());
         preparedStatement.setInt(6, account.getCheckinStat());
         preparedStatement.setString(7, account.getMembership().name());
+        preparedStatement.setString(8, account.getMembership().getExpirationDate().toString());
         preparedStatement.executeUpdate();
         System.out.println("Account inserted successfully.");
     }
@@ -83,7 +86,8 @@ public class Database {
                     int checkinStat = resultSet.getInt("checkinStat");
                     String membershipType = resultSet.getString("membershipType");
                     MembershipType membershipTypeEnum = MembershipType.valueOf(membershipType);
-                    Account account = new Account(name, address, telNumber, birthDate, pass, membershipTypeEnum);
+                    String expDate = resultSet.getString("expDate");
+                    Account account = new Account(name, address, telNumber, birthDate, pass, membershipTypeEnum, expDate);
                     account.setCheckinStat(checkinStat);
                     this.accounts.add(account);
                 }
@@ -138,6 +142,22 @@ public class Database {
         String sql = "UPDATE accounts SET membershipType = ? WHERE name = ?";
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, membershipType.name());
+            preparedStatement.setString(2, username);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("MembershipType updated successfully for " + username);
+            }else {
+                System.out.println("No account found with username: " + username);
+            }
+        }finally {
+            closeConnection();
+        }
+
+
+        connect();
+        String sql2 = "UPDATE accounts SET expDate = ? WHERE name = ?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql2)) {
+            preparedStatement.setString(1, LocalDate.now().toString());
             preparedStatement.setString(2, username);
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {

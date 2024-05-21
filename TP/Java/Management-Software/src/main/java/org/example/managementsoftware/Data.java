@@ -10,6 +10,7 @@ public class Data {
 
     public static ListView<HBox> listView;
     public static List<HBox> hBoxList;
+    public static ListView<HBox> clientList;
 
     class Admin{
         private static String username = Encrypt.sha256("admin");

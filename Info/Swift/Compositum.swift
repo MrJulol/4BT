@@ -5,7 +5,10 @@
 //  Created by Julian Thaler on 05/03/24.
 //
 
-
+protocol Component {
+   func add(component: Component)
+   func display(indent: String)
+}
 
 
 struct Leaf: Component {

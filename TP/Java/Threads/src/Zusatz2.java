@@ -45,11 +45,6 @@ public class Zusatz2 {
             int value;
             do {
                 value = resource.consume();
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
             } while (value != -1);
         }).start();
     }

@@ -20,7 +20,7 @@ public class ClientViewController{
     private Label name;
 
     @FXML
-    private ListView<HBox> CheckinListView;
+    private ListView<String> CheckinListView;
 
 
     /**
@@ -47,5 +47,9 @@ public class ClientViewController{
         }
         counter.setText("Number of Logins: "+Data.loggedOnAccount.getCheckinStat());
         name.setText("Welcome Back "+Data.loggedOnAccount.getName());
+        CheckinListView.getItems().clear();
+        Data.loggedOnAccount.getCheckinStatDates().forEach((date)->{
+            CheckinListView.getItems().add(date);
+        });
     }
 }

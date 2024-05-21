@@ -82,6 +82,11 @@ public class HelloController implements Initializable {
             server.start();
             out.println("TESTING FROM CLIENT 2");
             out.println("TESTING FROM CLIENT 3");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
 
         } catch (IOException e) {

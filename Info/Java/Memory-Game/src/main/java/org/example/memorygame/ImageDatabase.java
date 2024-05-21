@@ -8,8 +8,8 @@ public class ImageDatabase {
     private List<String> images;
     private ImageDatabase() {
         this.images = new ArrayList<>();
-        images.add("/Users/riven/dev/school/4BT/Info/Java/Memory-Game/src/main/java/org/example/memorygame/images/armadillo.jpg");
-        images.add("/Users/riven/dev/school/4BT/Info/Java/Memory-Game/src/main/java/org/example/memorygame/images/fennec.jpeg");
+        images.add("./src/main/java/org/example/memorygame/images/armadillo.jpg");
+        images.add("./src/main/java/org/example/memorygame/images/fennec.jpeg");
         images.add("/Users/riven/dev/school/4BT/Info/Java/Memory-Game/src/main/java/org/example/memorygame/images/fox.jpg");
         images.add("/Users/riven/dev/school/4BT/Info/Java/Memory-Game/src/main/java/org/example/memorygame/images/idk_viech.jpg");
         images.add("/Users/riven/dev/school/4BT/Info/Java/Memory-Game/src/main/java/org/example/memorygame/images/snep.jpg");

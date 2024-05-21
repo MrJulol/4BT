@@ -43,7 +43,6 @@ public class ToDoDatabase {
         items.stream()
                 .sorted((a, b)-> Boolean.compare(a.isCompleted(), b.isCompleted()))
                 .collect(Collectors.toCollection(LinkedHashSet::new))
-                .forEach((i)->
-                        itemsObservableList.add(i.getBox()));
+                .forEach((i)-> itemsObservableList.add(i.getBox()));
     }
 }
