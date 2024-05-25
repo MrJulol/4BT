@@ -1,8 +1,7 @@
-// Java Program to illustrate Busy Spinning as Wait
+package other;// Java Program to illustrate Busy Spinning as Wait
 // Strategy
 
 // Importing input output classes
-import java.io.*;
 // Importing List class from java.util package
 import java.util.List;
 import java.util.ArrayList;
@@ -52,7 +51,7 @@ class Customer implements Runnable {
     public void run()
     {
         while (this.pizzaMaker.isInProgress) {
-            System.out.println(Thread.currentThread().getName() + ":-Pizza order complete??");
+            System.out.println(Thread.currentThread().getName() + ":-other.Pizza order complete??");
             System.out.println("--Busy Spinning---");
             try {
                 Thread.sleep(1000);
@@ -82,7 +81,7 @@ class PizzaMaker implements Runnable {
 
     public void run()
     {
-        System.out.println("Pizza order in progress");
+        System.out.println("other.Pizza order in progress");
         pizza.make();
         try {
             Thread.sleep(3000);

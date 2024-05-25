@@ -1,3 +1,5 @@
+package other;
+
 import java.util.*;
 import java.util.concurrent.Semaphore;
 

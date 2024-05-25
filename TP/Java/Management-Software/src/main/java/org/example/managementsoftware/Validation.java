@@ -35,7 +35,6 @@ public class Validation {
     public static boolean validatePassword(String PassOnInit, String PassOnConfirm) {
         if(isInvalidInput(PassOnInit)) return false;
         if(isInvalidInput(PassOnConfirm)) return false;
-        if(!PassOnInit.equals(PassOnConfirm)) return false;
-        return true;
+        return PassOnInit.equals(PassOnConfirm);
     }
 }

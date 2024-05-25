@@ -90,6 +90,15 @@ public class MembershipViewController implements Initializable {
         Region region = new Region();
         HBox.setHgrow(region, Priority.ALWAYS);
 
+        Button details = new Button("Details");
+        details.setOnAction((ActionEvent event) -> {
+            Data.detailName.setText(Data.loggedOnAccount.getName());
+            Data.details.getItems().add(Data.loggedOnAccount.getAddress());
+            Data.details.getItems().add(Data.loggedOnAccount.getTelNumber());
+            Data.details.getItems().add(Data.loggedOnAccount.getMembership().name());
+            Data.details.getItems().add(""+Data.loggedOnAccount.getCheckinStat());
+        });
+
         box.getChildren().addAll(new Label(account.getName()), region, finalDate, deleteUser, membership);
         return box;
     }

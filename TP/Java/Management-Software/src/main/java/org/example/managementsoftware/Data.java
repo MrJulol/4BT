@@ -1,5 +1,6 @@
 package org.example.managementsoftware;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 
@@ -11,6 +12,9 @@ public class Data {
     public static ListView<HBox> listView;
     public static List<HBox> hBoxList;
     public static ListView<HBox> clientList;
+
+    public static ListView<String> details;
+    public static Label detailName;
 
     class Admin{
         private static String username = Encrypt.sha256("admin");

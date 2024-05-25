@@ -1,3 +1,5 @@
+package other;
+
 public class Übung3 {
 
     private volatile boolean running = true;

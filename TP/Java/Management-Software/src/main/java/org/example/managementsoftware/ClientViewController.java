@@ -2,14 +2,10 @@ package org.example.managementsoftware;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.HBox;
 
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 
 public class ClientViewController{
@@ -21,6 +17,8 @@ public class ClientViewController{
 
     @FXML
     private ListView<String> CheckinListView;
+    @FXML
+    private Label expDate;
 
 
     /**
@@ -30,6 +28,10 @@ public class ClientViewController{
      */
     public void onReturnButtonPressed(ActionEvent actionEvent) {
         Data.loggedOnAccount = null;
+        counter.setText(null);
+        name.setText(null);
+        expDate.setText(null);
+        CheckinListView.getItems().clear();
         SceneManager.getInstance().switchScene(SceneType.LOGIN);
     }
 
@@ -47,6 +49,7 @@ public class ClientViewController{
         }
         counter.setText("Number of Logins: "+Data.loggedOnAccount.getCheckinStat());
         name.setText("Welcome Back "+Data.loggedOnAccount.getName());
+        expDate.setText("Expiration Date: "+Data.loggedOnAccount.getMembership().getExpirationDate().toString());
         CheckinListView.getItems().clear();
         Data.loggedOnAccount.getCheckinStatDates().forEach((date)->{
             CheckinListView.getItems().add(date);

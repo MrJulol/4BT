@@ -25,12 +25,45 @@ public class RegisterClientController {
     private PasswordField passwordConfirm;
 
     public void onRegisterButtonClick(ActionEvent actionEvent) {
-        if (Validation.validateName(name.getText()) && Validation.validateAddress(address.getText()) && Validation.validatePhone(phone.getText()) && Validation.validateBirthDate(birthDate.getValue()) && Validation.validatePassword(passwordInit.getText(), passwordConfirm.getText())) {
-            System.out.println("Validation successful");
-            addUser();
-            clearAllFields();
-            SceneManager.getInstance().switchScene(SceneType.ADMIN);
+
+        if (!Validation.validateName(name.getText())) {
+            showAlert("Invalid name! Exists already or is Empty");
+            return;
         }
+        if (!Validation.validateAddress(address.getText())) {
+            showAlert("Invalid address!");
+            return;
+        }
+        if (!Validation.validatePhone(phone.getText())) {
+            showAlert("Invalid phone number!");
+            return;
+        }
+        if (!Validation.validateBirthDate(birthDate.getValue())) {
+            showAlert("Invalid birth date! Must be only numbers");
+            return;
+        }
+        if (!Validation.validatePassword(passwordInit.getText(), passwordConfirm.getText())) {
+            showAlert("Invalid password!");
+            return;
+        }
+
+        System.out.println("Validation successful");
+        addUser();
+        clearAllFields();
+        SceneManager.getInstance().switchScene(SceneType.ADMIN);
+
+    }
+
+    /**
+     * Shows an alert with the provided Message
+     *
+     * @param message
+     */
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     private void clearAllFields() {
@@ -94,13 +127,12 @@ public class RegisterClientController {
         }));
 
 
-
         membership.getItems().addAll(yearly, monthly, quarterly);
         membership.setMinWidth(120);
         Region region = new Region();
         HBox.setHgrow(region, Priority.ALWAYS);
 
-        box.getChildren().addAll(new Label(account.getName()), region,finalDate, deleteUser, membership);
+        box.getChildren().addAll(new Label(account.getName()), region, finalDate, deleteUser, membership);
         Data.listView.getItems().add(box);
         Data.clientList.getItems().add(new HBox(new Label(account.getName())));
         System.out.println(Database.getDatabase().getAccountsAsList());

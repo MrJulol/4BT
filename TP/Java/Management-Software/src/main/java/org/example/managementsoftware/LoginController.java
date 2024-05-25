@@ -65,16 +65,17 @@ public class LoginController {
             showAlert("Expired Membership");
             return false;
         }
-        System.out.println(tryLogin.getName());
-        System.out.println(tryLogin.getPass());
-        System.out.println(username);
-        System.out.println(pass);
 
         if (!tryLogin.getPass().equals(Encrypt.sha256(pass))) {
             showAlert("Invalid username or password");
             return false;
         }
+        if(tryLogin.getMembership().getExpirationDate().isBefore(LocalDate.now())){
+            showAlert("Expired Membership");
+            return false;
+        }
         Data.loggedOnAccount = tryLogin;
+
         return true;
 
     }

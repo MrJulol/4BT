@@ -1,3 +1,5 @@
+package other;
+
 import java.util.concurrent.Semaphore;
 import java.util.stream.IntStream;
 

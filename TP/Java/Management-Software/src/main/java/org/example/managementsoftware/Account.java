@@ -121,7 +121,11 @@ public class Account {
 
     public void setCheckinStat(int checkinStat) {
         this.checkinStat = checkinStat;
-        this.checkinStatDates.add(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));
+        this.checkinStatDates.addFirst(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy:MM:dd  HH:mm:ss")));
+    }
+
+    public void setCheckinStat2(int checkinStat) {
+        this.checkinStat = checkinStat;
     }
 
     public List<String> getCheckinStatDates() {
@@ -144,9 +148,9 @@ public class Account {
     @Override
     public String toString() {
         return "Account{" +
-                "name='" + name + '\'' +
-                ", pass='" + pass + '\'' +
-                ", checkinStat=" + checkinStat +
+                name + '\'' +
+                pass + '\'' +
+                checkinStat +
                 '}';
     }
 }

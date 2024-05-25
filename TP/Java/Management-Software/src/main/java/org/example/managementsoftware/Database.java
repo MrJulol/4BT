@@ -30,8 +30,10 @@ public class Database {
                 expDate TEXT
             );""";
 
+
     /**
      * Connects to Database at this.URL
+     *
      * @throws SQLException
      */
     private void connect() throws SQLException {
@@ -40,15 +42,16 @@ public class Database {
             System.out.println("Connected to database");
         }
     }
+
     //Execute Table creation statement
     private void createTable() throws SQLException {
         Statement statement = connection.createStatement();
         statement.execute(CREATE_TABLE_SQL);
-        System.out.println("Created table");
     }
 
     /**
      * Insert Account into db
+     *
      * @param account
      * @throws SQLException
      */
@@ -88,7 +91,7 @@ public class Database {
                     MembershipType membershipTypeEnum = MembershipType.valueOf(membershipType);
                     String expDate = resultSet.getString("expDate");
                     Account account = new Account(name, address, telNumber, birthDate, pass, membershipTypeEnum, expDate);
-                    account.setCheckinStat(checkinStat);
+                    account.setCheckinStat2(checkinStat);
                     this.accounts.add(account);
                 }
             }
@@ -106,6 +109,7 @@ public class Database {
 
     /**
      * Closes Connection to db
+     *
      * @throws SQLException
      */
     private void closeConnection() throws SQLException {
@@ -117,6 +121,7 @@ public class Database {
 
     /**
      * Update statement for the CheckinStat of a user
+     *
      * @param username
      * @param newCheckinStat
      * @throws SQLException
@@ -137,35 +142,36 @@ public class Database {
             closeConnection(); // Close connection after operation
         }
     }
+
     public void updateMembership(String username, MembershipType membershipType) throws SQLException {
         connect();
         String sql = "UPDATE accounts SET membershipType = ? WHERE name = ?";
-        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, membershipType.name());
             preparedStatement.setString(2, username);
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("MembershipType updated successfully for " + username);
-            }else {
+            } else {
                 System.out.println("No account found with username: " + username);
             }
-        }finally {
+        } finally {
             closeConnection();
         }
 
 
         connect();
         String sql2 = "UPDATE accounts SET expDate = ? WHERE name = ?";
-        try(PreparedStatement preparedStatement = connection.prepareStatement(sql2)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql2)) {
             preparedStatement.setString(1, LocalDate.now().toString());
             preparedStatement.setString(2, username);
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("MembershipType updated successfully for " + username);
-            }else {
+            } else {
                 System.out.println("No account found with username: " + username);
             }
-        }finally {
+        } finally {
             closeConnection();
         }
     }
@@ -191,7 +197,7 @@ public class Database {
      */
     private Database() {
         accounts = new HashSet<>();
-        try{
+        try {
             connect();
             createTable();
             getAllAccounts();
@@ -208,9 +214,10 @@ public class Database {
         }
         return database;
     }
+
     //adds an account to the local HashSet and the Database
     public void addAccount(Account account) {
-        try{
+        try {
             connect();
             insertAccount(account);
             closeConnection();
@@ -221,7 +228,7 @@ public class Database {
     }
 
     public void removeAccount(Account account) {
-        try{
+        try {
             deleteAccount(account.getName());
         } catch (SQLException e) {
             throw new RuntimeException(e);

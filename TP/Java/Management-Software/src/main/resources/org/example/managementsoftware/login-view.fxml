@@ -13,8 +13,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="396.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.managementsoftware.LoginController">
-   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+<?import java.net.URL?>
+<VBox fx:id="rootPane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="396.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.managementsoftware.LoginController">
+    <stylesheets>
+        <URL value="@loginStyle.css" />
+    </stylesheets>
+
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
           <GridPane minHeight="30.0" minWidth="230.0">
               <columnConstraints>
@@ -54,7 +59,7 @@
           </GridPane>
          <ImageView fitHeight="116.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@Logo.jpeg" />
+               <Image url="@../../../../../../../../../Info/Java/Fitness-Studio-Management/src/main/resources/org/example/fitnessstudiomanagement/Controllers/Logo.png" />
             </image>
          </ImageView>
       </children>
