@@ -1,0 +1,20 @@
+/* listViewStyle.css */
+.list-view {
+    -fx-background-color: #f0f0f0; /* Light grey background color for the ListView */
+    -fx-border-color: #b3b3b3; /* Border color for the ListView */
+}
+
+.list-cell {
+    -fx-background-color: #ffffff; /* White background color for list items */
+    -fx-text-fill: #000000; /* Black text color for list items */
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #4CAF50; /* Green background color for selected item */
+    -fx-text-fill: #ffffff; /* White text color for selected item */
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #d3d3d3; /* Light grey background color for hovered item */
+    -fx-text-fill: #000000; /* Black text color for hovered item */
+}
