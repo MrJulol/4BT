@@ -1,0 +1,6 @@
+[submodule "Info/Java/Fitness-Studio-Management"]
+	path = Info/Java/Fitness-Studio-Management
+	url = https://github.com/MrJulol/JavaFX-Fitnessstudio.git
+[submodule "Info/Java/TSP"]
+	path = Info/Java/TSP
+	url = https://github.com/MrJulol/TSP.git
